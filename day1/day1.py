@@ -9,15 +9,19 @@ while line:
     #we increase
         num = num + lineNum 
         while num > 99:
+            passw += 1
             num = num - 100
     else:
     #we decrease
         num = num - lineNum
         while num < 0:
+            if num + lineNum != 0:
+                passw += 1
             num = 100 + num
+        if num == 0:
+            passw += 1
 
-    if num == 0:
-        passw += 1
+
     line = file.readline()
 
 print(passw)
